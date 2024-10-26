@@ -38,7 +38,7 @@ function App() {
             }
           })       
       }
-    });    
+    });
   }
   return (
     <>
@@ -76,10 +76,12 @@ function App() {
                 <td>{user.gender}</td>
                 <td>{user.status}</td>
                 <td className='flex gap-3'>
-                  <button
-                    className='text-xl p-3 text-white bg-green-600 shadow-xl cursor-pointer hover:translate-y-[-10px] transition-all duration-500'
-                  ><Link to="/updateUser"><FaPencil /></Link>
-                  </button>
+                  <Link to={`/updateUser/${user._id}`}>
+                    <button
+                      className='text-xl p-3 text-white bg-green-600 shadow-xl cursor-pointer hover:translate-y-[-10px] transition-all duration-500'
+                    ><FaPencil />
+                    </button>
+                  </Link>
                   <button
                     onClick={()=>handelDelete(user._id)}
                     className='text-xl p-3 text-white bg-red-600 shadow-xl cursor-pointer hover:translate-y-[-10px] transition-all duration-500'
